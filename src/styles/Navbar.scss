@@ -1,0 +1,23 @@
+.navbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: auto;
+}
+.navbar-links > p {
+  margin: 10px;
+  color: #fff;
+}
+.navbar-container {
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #343a40;
+}
+.navbar-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+.navbar-buttons > input {
+  color: black;
+  margin: 10px;
+}
