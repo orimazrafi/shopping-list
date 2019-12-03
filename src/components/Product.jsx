@@ -1,5 +1,10 @@
-import React from "react";
-function Product({ p, handleIncrement, handleDecrement, handleSize }) {
+import React, { useContext } from "react";
+import { ProductContext } from "../context/productContext";
+
+function Product({ p }) {
+  const { handleIncrement, handleDecrement, handleSize } = useContext(
+    ProductContext
+  );
   function handleName(name) {
     return name[0].toUpperCase() + name.slice(1);
   }

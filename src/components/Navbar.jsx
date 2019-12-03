@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { ProductContext } from "../context/productContext";
 
-function Navbar({ data }) {
+function Navbar() {
+  const { data } = useContext(ProductContext);
   const [count, setCount] = useState(0);
   useEffect(() => {
     const caculateNumberOfProducts = () => {

@@ -1,5 +1,9 @@
-import React from "react";
-function Sort({ handleSort, isAsending }) {
+import React, { useContext } from "react";
+import { FeaturesContext } from "../context/FeaturesContext";
+
+function Sort() {
+  const { handleSort, isAsending } = useContext(FeaturesContext);
+
   return (
     <div>
       <button className="btn btn-secondary" onClick={handleSort}>

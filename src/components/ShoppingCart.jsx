@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ProductContext } from "../context/productContext";
 
-function ShoppingCart({ items, handleEmptyProdcut }) {
+function ShoppingCart() {
+  const { data, handleEmptyProdcut } = useContext(ProductContext);
+  const items = [...data].filter(d => d.count > 0);
+
   return (
     <div>
       {items &&

@@ -1,5 +1,9 @@
-import React from "react";
-function Input({ handleChange, text }) {
+import React, { useContext } from "react";
+import { FeaturesContext } from "../context/FeaturesContext";
+
+function Input() {
+  const { text, handleChange } = useContext(FeaturesContext);
+
   return (
     <div className="input-container form-group">
       <input
@@ -12,11 +16,5 @@ function Input({ handleChange, text }) {
       />
     </div>
   );
-
-  //   <div class="form-group">
-  //   <label for="exampleInputEmail1">Email address</label>
-  //   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-  //   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  // </div>
 }
 export default Input;

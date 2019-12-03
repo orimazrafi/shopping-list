@@ -1,30 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Products from "./../components/Products";
 import Input from "../components/Input";
 import Sort from "../components/Sort";
-function ProductsPage({
-  data: items,
-  handleDecrement,
-  handleIncrement,
-  handleSize
-}) {
-  const [text, setText] = useState("");
-  const [isAsending, setAsendingSort] = useState(undefined);
-  function handleChange({ value }) {
-    setText(value);
-  }
-
-  function handleSort() {
-    if (isAsending === undefined) return setAsendingSort("asen");
-    setAsendingSort(prevState => {
-      return prevState === undefined || prevState === "desc" ? "asen" : "desc";
-    });
-  }
+import { ProductContext } from "../context/productContext";
+import { FeaturesContext } from "../context/FeaturesContext";
+function ProductsPage() {
+  const { data } = useContext(ProductContext);
+  const { text, isAsending } = useContext(FeaturesContext);
 
   const filteredArray =
     text.length === 0
-      ? items
-      : items.filter(i =>
+      ? data
+      : data.filter(i =>
           i.name.toLowerCase().includes(text.toLocaleLowerCase().trim())
         );
   if (isAsending)
@@ -33,19 +20,13 @@ function ProductsPage({
       : filteredArray.sort((a, b) => a.price - b.price);
 
   return (
-    <div>
-      {/* <h1>Products</h1> */}
+    <>
       <div className="filters-container mt-4">
-        <Input handleChange={handleChange} text={text} />
-        <Sort isAsending={isAsending} handleSort={handleSort} />
+        <Input />
+        <Sort />
       </div>
-      <Products
-        handleDecrement={handleDecrement}
-        handleIncrement={handleIncrement}
-        handleSize={handleSize}
-        items={filteredArray}
-      ></Products>
-    </div>
+      <Products></Products>
+    </>
   );
 }
 export default ProductsPage;
