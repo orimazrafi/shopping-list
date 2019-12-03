@@ -1,0 +1,26 @@
+.shopping-card-content {
+  display: flex;
+  flex-wrap: wrap;
+  .image-container {
+    flex-basis: 300px;
+    margin-left: auto;
+    img {
+      height: 250px;
+      width: 200px;
+    }
+  }
+  .text-container {
+    flex: 1;
+  }
+  .button-container {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .shopping-card-content {
+    .text-container {
+      text-align: center;
+    }
+  }
+}

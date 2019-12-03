@@ -1,23 +1,20 @@
-.navbar-links {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: auto;
-}
-.navbar-links > p {
-  margin: 10px;
-  color: #fff;
-}
+@import "./variables";
+
 .navbar-container {
-  margin: 0;
   display: flex;
   justify-content: flex-end;
-  background-color: #343a40;
-}
-.navbar-buttons {
-  display: flex;
-  flex-wrap: wrap;
-}
-.navbar-buttons > input {
-  color: black;
-  margin: 10px;
+  margin: 0;
+  background-color: $navbar;
+  .links {
+    p {
+      margin: 10px;
+      color: $navbar-links;
+      :hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .links:nth-child(1) {
+    margin-right: auto;
+  }
 }
