@@ -1,13 +1,16 @@
 import React, { useContext } from "react";
-import { ProductContext } from "../context/productContext";
+import { ProductContext } from "../context/ProductContext";
 
 function Product({ p }) {
-  const { handleIncrement, handleDecrement, handleSize } = useContext(
-    ProductContext
-  );
+  const {
+    handleIncrement,
+    handleDecrement,
+    handleSize,
+  } = useContext(ProductContext);
   function handleName(name) {
     return name[0].toUpperCase() + name.slice(1);
   }
+
   return (
     <div key={p.id} className="card mb-4 shadow-sm">
       <div className="card-header">

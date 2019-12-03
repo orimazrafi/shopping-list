@@ -1,5 +1,5 @@
 import React from "react";
-import ShoppingCart from "../components/shoppingCart";
+import ShoppingCart from "../components/ShoppingCart";
 import TotalAmount from "../components/TotalAmount";
 
 function ShoppingCartPage() {

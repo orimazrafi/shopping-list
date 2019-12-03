@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { ProductContext } from "../context/productContext";
+import { ProductContext } from "../context/ProductContext";
 function TotalAmount() {
   const { data } = useContext(ProductContext);
   const items = data.filter(item => item.count > 0);
@@ -9,9 +9,11 @@ function TotalAmount() {
   return (
     <div className="mt-3 mb-3 text-center">
       {totalAmount === 0 ? (
-        <h3>You have not purchase anything yet!</h3>
+        <div className="no-purchase-container">
+        <h2>You have not purchase anything yet!</h2>
+        </div>
       ) : (
-        <h3>you'r total amount is: {totalAmount} $</h3>
+        <h2 className="total-display">you'r total amount is: {totalAmount} $</h2>
       )}
     </div>
   );

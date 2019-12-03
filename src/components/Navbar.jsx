@@ -1,19 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { ProductContext } from "../context/productContext";
+import useNavbar from "./../hooks/UseNavbar";
 
 function Navbar() {
-  const { data } = useContext(ProductContext);
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    const caculateNumberOfProducts = () => {
-      let items = [...data];
-      let numberOfItems = items.filter(i => i.count > 0).length;
-      setCount(numberOfItems);
-    };
-    caculateNumberOfProducts();
-  }, [data]);
-
+  const [count] = useNavbar();
   return (
     <div className="navbar-container">
       <div className="links">

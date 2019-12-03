@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Products from "./../components/Products";
 import Input from "../components/Input";
 import Sort from "../components/Sort";
-import { ProductContext } from "../context/productContext";
+import { ProductContext } from "../context/ProductContext";
 import { FeaturesContext } from "../context/FeaturesContext";
 function ProductsPage() {
   const { data } = useContext(ProductContext);

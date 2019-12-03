@@ -1,0 +1,15 @@
+.total-display::after{
+  content: " *";
+
+}
+.total-display::before{
+  content: "* ";
+
+}
+.no-purchase-container{
+    display:flex;
+    height:300px;  
+    h2{
+        margin:auto;
+    }  
+}

@@ -43,7 +43,7 @@ export default [
   },
   {
     id: 5,
-    name: "tablet",
+    name: "bluetooth speakers",
     url: "bluetooth-speakers.jpg",
     price: 50,
     sizes: [],

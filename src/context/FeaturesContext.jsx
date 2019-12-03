@@ -1,21 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import useFeatures from "./../hooks/UseFeatures";
 
 const FeaturesContext = React.createContext();
 
 function FeaturesContextProvider(props) {
-  const [text, setText] = useState("");
-  const [isAsending, setAsendingSort] = useState(undefined);
-  function handleChange({ value }) {
-    setText(value);
-  }
-
-  function handleSort() {
-    if (isAsending === undefined) return setAsendingSort("asen");
-    setAsendingSort(prevState => {
-      return prevState === undefined || prevState === "desc" ? "asen" : "desc";
-    });
-  }
-
+  const [text, isAsending, handleChange, handleSort] = useFeatures();
   return (
     <FeaturesContext.Provider
       value={{
